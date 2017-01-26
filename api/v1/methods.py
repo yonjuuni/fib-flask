@@ -1,10 +1,10 @@
-from flask import jsonify
+from flask import jsonify, make_response, render_template
 
-from . import v1
-from app import cache
+from api import cache
+from api.v1 import v1
 
 
-def get_fib(n):
+def calculate_fib(n):
     result = [0, 1]
     for i in range(2, n + 1):
         result.append(result[-1] + result[-2])
@@ -24,12 +24,12 @@ def fib(number):
     result = cache.get(number)
 
     if result is None:
-        result = get_fib(number)
+        result = calculate_fib(number)
         cache.set(number, result, timeout=60 * 60)
 
-    return jsonify({'result': result})
+    return jsonify({'sequence': result})
 
 
 @v1.app_errorhandler(404)
 def page_not_found(e):
-    return jsonify({'error': 'Invalid API call.'}), 404
+    return make_response(jsonify({'error': 'Invalid API call.'}), 404)
