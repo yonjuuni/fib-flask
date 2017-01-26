@@ -1,4 +1,4 @@
-from flask import jsonify, make_response, render_template
+from flask import jsonify
 
 from api import cache
 from api.v1 import v1
@@ -32,4 +32,4 @@ def fib(number):
 
 @v1.app_errorhandler(404)
 def page_not_found(e):
-    return make_response(jsonify({'error': 'Invalid API call.'}), 404)
+    return jsonify({'error': 'Invalid API call.'}), 404
