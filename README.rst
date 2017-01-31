@@ -34,9 +34,9 @@ Example response:
 
 Errors
 ------
- * The number should be in range from 0 to 1000.
- * Not an integer.
- * Invalid API call.
+* The number should be in range from 0 to 1000.
+* Not an integer.
+* Invalid API call.
 
 Implementation / Deployment
 ---------------------------
@@ -45,6 +45,6 @@ Test instance deployed at http://api.s1ck.org:12346 using uWSGI + Nginx.
 
 
 Author
-______
+------
 
 `Alex Sanchez <mailto:alex@s1ck.org>`_.
