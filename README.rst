@@ -11,11 +11,12 @@ Supports integers in range from 0 to 1000.
 
 Example request:
 ~~~~~~~~~~~~~~~~
-``curl http://localhost:5000/v1/fib/10``
+``$ curl http://localhost:5000/v1/fib/10``
 
 Example response:
 ~~~~~~~~~~~~~~~~~
 .. code-block:: json
+
     {
       "sequence": [
         0, 
